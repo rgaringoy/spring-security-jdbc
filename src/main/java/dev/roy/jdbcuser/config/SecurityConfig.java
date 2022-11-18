@@ -18,7 +18,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import javax.sql.DataSource;
 
 @EnableWebSecurity
-public class SecurityConfi
+public class SecurityConfig {
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws  Exception{
@@ -58,14 +58,14 @@ public class SecurityConfi
         return new BCryptPasswordEncoder();
     }
 
-//    @Bean
-//    InMemoryUserDetailsManager users() {
-//        return new InMemoryUserDetailsManager(
-//                User.withUsername("dan")
-//                        .password("{noop}password")
-//                        .roles("ADMIN")
-//                        .build()
-//        );
-//    }
+    @Bean
+    InMemoryUserDetailsManager users() {
+        return new InMemoryUserDetailsManager(
+                User.withUsername("dan")
+                        .password("{noop}password")
+                        .roles("ADMIN")
+                        .build()
+        );
+    }
 }
 
