@@ -58,14 +58,14 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    @Bean
-    InMemoryUserDetailsManager users() {
-        return new InMemoryUserDetailsManager(
-                User.withUsername("dan")
-                        .password("{noop}password")
-                        .roles("ADMIN")
-                        .build()
-        );
-    }
+//    @Bean
+//    InMemoryUserDetailsManager users() {
+//        return new InMemoryUserDetailsManager(
+//                User.withUsername("dan")
+//                        .password("{noop}password")
+//                        .roles("ADMIN")
+//                        .build()
+//        );
+//    }
 }
 
